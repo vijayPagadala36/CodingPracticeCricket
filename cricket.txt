@@ -1,0 +1,61 @@
+// get All Players Query
+
+const allPlayersQuery = `SELECT 
+* 
+FROM
+cricket_team;`
+
+
+//Post Players Query 
+const playerDetails = request.body
+const {player_id,player_name,jersey_number,role} = playerDetails
+const postPlayerQuery = `INSERT 
+INTO
+
+player_id ,
+player_name,
+jersey_number,
+role 
+
+VALUES `
+    '${player_id}
+    '${player_name}
+    '${jersey_number}
+    '${role}
+;`
+
+//get Player With Id
+
+const playerId = request.params
+const playerQuery = `SELECT 
+    *
+    FROM
+    cricket_team
+    WHERE 
+    player_id = '${playerId}'
+    ;`
+
+
+//Updating PlayerId
+
+const playersId = request.params
+const playersDetails = request.body
+const {player_id,player_name,jersey_number,role} = playersDetails
+const playersDetailsQuery = `SET 
+
+player_name = '${player_name},
+jersey_number ='${jersey_number},
+role ='${role} 
+
+WHERE
+ player_id = '${player_id}' ;`
+
+
+//Deleting Player
+
+const playerIdentity = request.params
+const deletingQuery = `DELETE 
+playerIdentity 
+FROM
+cricket_team
+;`
